@@ -99,7 +99,11 @@ class LandingPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0), // Adjust the radius as needed
               ),
             ),
-            child: const Text('Start Donating'),
+            child: const Text('Start Donating',
+            style: TextStyle(
+              color: Colors.white
+            ),
+            ),
           ),
             SizedBox(
              height:screenHeight *0.10,
