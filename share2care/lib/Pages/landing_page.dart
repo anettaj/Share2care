@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:share2care/Components/sizing_components.dart';
 import 'package:share2care/Components/Landing_page/qoute.dart';
-
+import 'package:share2care/Pages/tearms_page.dart';
 import '../Components/Landing_page/discover_text.dart';
 class LandingPage extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class LandingPage extends StatelessWidget {
             flex: 5,
             child: Center(
               child: SvgPicture.asset(
-                'lib/Authentication/Assets/icon.svg',
+                'assets/icon.svg',
 
               ),
             ),
@@ -43,7 +43,7 @@ class LandingPage extends StatelessWidget {
                   left: 20.0,
 
                   child: Image(
-                    image: AssetImage('lib/Authentication/Assets/coma_top.png'),
+                    image: AssetImage('assets/coma_top.png'),
                     height: screenHeight*0.1,
                   ),
                 ),
@@ -66,7 +66,7 @@ class LandingPage extends StatelessWidget {
                   top: screenHeight*0.18,
                   right: 20.0,
                   child: Image(
-                    image: AssetImage('lib/Authentication/Assets/coma_bottom.png'),
+                    image: AssetImage('assets/coma_bottom.png'),
                     height: screenHeight*0.1,
                   ),
                 ),

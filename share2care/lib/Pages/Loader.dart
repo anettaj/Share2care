@@ -45,7 +45,7 @@ class _LoaderState extends State<Loader> {
       body: Container(
         child: Center(
           child: SvgPicture.asset(
-            'lib/Authentication/Assets/icon.svg',
+            'assets/icon.svg',
             height: screenHeight * 0.2,
           ),
         ),
@@ -54,8 +54,3 @@ class _LoaderState extends State<Loader> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: Loader(), // Use your splash screen widget as the initial route
-  ));
-}
