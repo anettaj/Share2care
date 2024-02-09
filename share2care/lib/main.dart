@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share2care/Pages/Loader.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme:ThemeData(
         scaffoldBackgroundColor: Colors.transparent, // Set the scaffold background to transparent
       ),
-      home: Loader(),
+      home: Loader()
     );
   }
 }
