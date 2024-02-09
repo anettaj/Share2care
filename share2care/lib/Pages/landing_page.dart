@@ -50,7 +50,7 @@ class LandingPage extends StatelessWidget {
 
                 Quotes(),
                 Positioned(
-                  top: screenHeight*0.19,
+                  top: screenHeight*0.201,
                   right: 50.0,
                   child: Text(
                     "-Pablo Picasso",
@@ -84,6 +84,9 @@ class LandingPage extends StatelessWidget {
               color: Color(0xff4a465d),
             ),
             textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height:screenHeight *0.010,
           ),
 
           ElevatedButton(
