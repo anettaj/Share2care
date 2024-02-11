@@ -23,6 +23,7 @@ class _TearmsPageState extends State<TearmsPage> {
   Widget build(BuildContext context) {
     Sizing sizing = Sizing(context);
     double screenHeight = sizing.setHeight();
+    double screenWidth = sizing.setWidth();
 
     return ScaffoldGradientBackground(
       gradient: const LinearGradient(
@@ -39,18 +40,18 @@ class _TearmsPageState extends State<TearmsPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 55.0, left: 10.0),
+                padding: const EdgeInsets.only(left:20,top: 55.0),
                 child: Text(
                   'Terms & Conditions',
                   style: TextStyle(
                     color: Color(0xFF4A465D),
-                    fontSize: screenHeight * 0.080,
+                    fontSize: screenHeight * 0.060,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20.0,bottom: 15.0),
+                padding: EdgeInsets.only(left:20,top: 20.0,bottom: 15.0),
                 child: Text('Use of Share2Care constitutes acceptance of these Terms.',
                   style: TextStyle(
                   color: Color(0xFFFFFFFF),
@@ -59,44 +60,42 @@ class _TearmsPageState extends State<TearmsPage> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 10.0,right: 20.0),
-                child: Column(
-        
+              Column(
+
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: str
+                    .map((bulletPoint) => Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: str
-                      .map((bulletPoint) => Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left:20,bottom: 10.0),
+                      child: Text(
+                        "• ",
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: screenHeight * 0.02,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
                         padding: EdgeInsets.only(bottom: 10.0),
                         child: Text(
-                          "• ",
+                          bulletPoint,
                           style: TextStyle(
-                            color: Color(0xFFFFFFFF),
-                            fontSize: screenHeight * 0.02,
-                            fontWeight: FontWeight.bold
+                            color: Color(0xFFA19E9E),
+                            fontSize: screenHeight * 0.013,
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 10.0),
-                          child: Text(
-                            bulletPoint,
-                            style: TextStyle(
-                              color: Color(0xFFA19E9E),
-                              fontSize: screenHeight * 0.014,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ))
-                      .toList(),
-                ),
+                    ),
+                  ],
+                ))
+                    .toList(),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(
                     value: isChecked,
@@ -112,18 +111,21 @@ class _TearmsPageState extends State<TearmsPage> {
                         isChecked = value!;
                       });
                     },
-                    // shape: RoundedRectangleBorder(
-                    //   side: BorderSide(
-                    //     color: Colors.blue, // Set the border color here
-                    //     width: 2.0, // Set the border width
-                    //   ),
-                    //   borderRadius: BorderRadius.circular(4.0), // Adjust the border radius as needed
-                    // ),
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.blue, // Set the border color here
+                        width: 2.0, // Set the border width
+                      ),
+                      borderRadius: BorderRadius.circular(4.0), // Adjust the border radius as needed
+                    ),
                   ),
-                  Text('I agree to the Terms and Conditions of Sher2Care',
-                  style: TextStyle(
-                    color: Colors.white
-                  ),
+                  Container(
+                    width: screenWidth*0.81,
+                    child: Text('I agree to the Terms and Conditions of Sher2Care',
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                    ),
                   ),
                 ],
               ),
@@ -151,7 +153,18 @@ class _TearmsPageState extends State<TearmsPage> {
                 ),
               ),
               SizedBox(
-                height:screenHeight *0.10,
+                height:screenHeight *0.03,
+              ),
+              Text(
+                "© Share2Care. All rights reserved.",
+                style: TextStyle(
+                  fontFamily: "Lato",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xff4a465d),
+                  height: 14/12,
+                ),
+                textAlign: TextAlign.center,
               ),
             ],
           ),
