@@ -115,7 +115,7 @@ class LandingPage extends StatelessWidget {
            const Expanded(
              flex: 1,
              child: Text(
-               "© Shere2Care. All rights reserved.",
+               "© Share2Care. All rights reserved.",
                style: TextStyle(
                fontFamily: "Lato",
                fontSize: 12,
