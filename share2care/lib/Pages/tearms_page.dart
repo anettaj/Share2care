@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:share2care/Components/sizing_components.dart';
+import 'package:share2care/Pages/Register.dart';
 class TearmsPage extends StatefulWidget {
   @override
   State<TearmsPage> createState() => _TearmsPageState();
@@ -137,7 +138,7 @@ class _TearmsPageState extends State<TearmsPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TearmsPage()), // Replace TearmsPage() with the actual name of your terms page
+                    MaterialPageRoute(builder: (context) => Register()), // Replace TearmsPage() with the actual name of your terms page
                   );
                 },
                 style: ElevatedButton.styleFrom(
