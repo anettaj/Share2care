@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
-import '../Components/Register/Reg_heading.dart';
-import '../Components/Register/Reg_subtitle.dart';
-import '../Components/Register/Reg_textfield.dart';
+import '../Components/Register_Login/Copyright.dart';
+import '../Components/Register_Login/GoogleButton.dart';
+import '../Components/Register_Login/OR_Button.dart';
+import '../Components/Register_Login/Reg_heading.dart';
+import '../Components/Register_Login/Reg_subtitle.dart';
+import '../Components/Register_Login/Reg_textfield.dart';
 import '../Components/sizing_components.dart';
+import 'Home.dart';
 import 'Register.dart';
 
 class Login extends StatefulWidget {
@@ -114,9 +118,11 @@ class _LoginState extends State<Login> {
                         alignment: Alignment.center,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(builder: (context) => Register()),                             );
+                              MaterialPageRoute(builder: (context) =>Home()),
+                                  (Route) => false,
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xff37A22E),
@@ -128,74 +134,29 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: screenWidth * 0.3,
-                            child: Divider(
-                              height: 1,
-                              color: Color(0xff4A465D),
-                            ),
-                          ),
-                          Text(
-                            ' OR ',
-                            style: TextStyle(color: Color(0xff4A465D)),
-                          ),
-                          SizedBox(
-                            width: screenWidth * 0.3,
-                            child: Divider(
-                              height: 1,
-                              color: Color(0xff4A465D),
-                            ),
-                          ),
-                        ],
-                      ),
+                      OR_Button(screenWidth: screenWidth),
                       SizedBox(height: 15),
-                      GestureDetector(
-                        onTap: () {
-                          // Handle Google sign-in here
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(1.0),
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset('assets/google icon.png',
-                                height: 30,
-                              ),
-                              SizedBox(width: 10),
-                              Text('Continue with Google'),
-                            ],
-                          ),
-                        ),
-                      ),
+                      GoogleButton(),
                       SizedBox(height: 30),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          'New to Share2Care ?',
-                          style: TextStyle(color: Colors.white),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => Register()),
+                                (Route) => false,
+                          );
+
+                        },
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'New to Share2Care ?',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                       SizedBox(height: 40),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          height: screenHeight * 0.1,
-                          child: Text(
-                            'Share2Care is committed to protecting your privacy and data. By joining, you become a part of a community that shares and cares.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Color(0xff4A465D)),
-                          ),
-                        ),
-                      ),
+                      Copyright(screenHeight: screenHeight),
                     ],
                   ),
                 ),
@@ -207,3 +168,4 @@ class _LoginState extends State<Login> {
     );
   }
 }
+
