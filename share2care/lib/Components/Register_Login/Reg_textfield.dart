@@ -35,8 +35,8 @@ class Reg_textfield extends StatelessWidget {
             }
           },
           decoration: InputDecoration(
-            fillColor: color,
-            filled: true,
+            // fillColor: color,
+            // filled: true,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Color(0xff37A22E)),
               borderRadius: BorderRadius.only(
